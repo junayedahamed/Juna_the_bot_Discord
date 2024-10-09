@@ -25,11 +25,3 @@ commands_genaral=[
 
 "src {searching text}" #this will make a search  on web for you EX: jtb src what is discord bot
 ]
-
-echo "# Juna_the_bot_Discord" >> README.md
-git init
-git add
-git commit -m "first commit"
-git branch -M main
-git remote add origin https://github.com/junayedahamed/Juna_the_bot_Discord.git
-git push -u origin main

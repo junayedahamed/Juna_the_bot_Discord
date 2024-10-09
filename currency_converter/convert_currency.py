@@ -1,8 +1,8 @@
 import requests
-from qoute_jokes import MY_API
+import api
 def converter(amount,fCurrency,lcurrency):
     api_url = f'https://api.api-ninjas.com/v1/convertcurrency?have={fCurrency}&want={lcurrency}&amount={amount}'
-    response = requests.get(api_url, headers={'X-Api-Key': MY_API})
+    response = requests.get(api_url, headers={'X-Api-Key': api.MY_API})
     if response.status_code == requests.codes.ok:
         print(response.text)
     else:

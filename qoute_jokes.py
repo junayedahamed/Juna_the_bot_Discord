@@ -18,7 +18,7 @@ def get_jokes():
 
     if jokes.status_code==requests.codes.ok:
         jokes_d=jokes.text
-        # print((()))
+        print(jokes.text)
 
         return jokes_d[11:-3]
 
