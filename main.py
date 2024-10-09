@@ -6,6 +6,8 @@ from Reaction import react,lottary
 from Key import token
 import guess_game
 from search_item import search_here
+from video_dn_linkProvider import download_link
+from image_to_txt import image_to_text
 intents=discord.Intents.all()
 client = discord.Client(intents=intents)
 
@@ -22,12 +24,20 @@ async def on_message(message):
     if message.content.startswith("jtb hello"):
 
         await message.channel.send("Hello!")
-    elif message.content.startswith("jtb"):
+    if message.content.startswith("jtb"):
         # print(message.attachments)
 
         act_com = message.content[4:]
         print(act_com)
+        count = 0
+        #--------------------- commmand section ---------#
+        if message.attachments:
 
+            img_loc = message.attachments[0]
+            count=1
+
+            print(img_loc)
+            # print(f'as str:  {str(img_loc)}')
 
         if act_com.lower() in ["how are you?","how are you"]:
             await message.channel.send("I am good what about you?")
@@ -98,10 +108,21 @@ async def on_message(message):
             await message.channel.send(items[0])
             await message.channel.send(items[1])
 
-
-    # command list get
+    #youtube video download link provider----------------------------------
+        elif act_com[:2].lower()=='dl':
+            await message.channel.send(download_link.link(act_com[20:]))
+    # command list get---------------------------------------------
         elif act_com=="help":
             await message.channel.send(com_list.commands())
+        elif act_com.lower() in ['imgtotxt','imgtotext']:
+
+            if count==1:
+                print(img_loc)
+                await message.channel.send(image_to_text.imgtotxt(img_loc))
+            else:
+               print(f'Called {act_com} without image')
+               await message.channel.send("No Img attached with command. Please attach one and try again")
+
 
 client.run(token)
 

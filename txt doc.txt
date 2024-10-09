@@ -24,4 +24,7 @@ commands_genaral=[
 # Search anything in web through bot
 
 "src {searching text}" #this will make a search  on web for you EX: jtb src what is discord bot
+
+"dl" or "Dl" is for getting download link from a youtube video link  ex: "jtb dl https://youtu.be/oAVhUAaVCVQ?si=jmzp6UBDjn_SC250"
+you will get download link as an message on discord
 ]
