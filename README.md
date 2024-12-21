@@ -41,5 +41,11 @@ if you provide english docs image it will convert that into text
 
 
 
+## youtube download link provider
+"dl" or "Dl" is for getting download link from a youtube video link 
+ ex:
+ "jtb dl https://youtu.be/oAVhUAaVCVQ?si=jmzp6UBDjn_SC250"
+you will get download link as an message on discord
+
 
 
